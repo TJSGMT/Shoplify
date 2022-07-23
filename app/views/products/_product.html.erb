@@ -5,10 +5,13 @@
   </p>
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <%= number_to_currency(product.price) %>
   </p>
   <p>
-    <strong>Payment:</strong>
     <%= button_to "Buy Now!", checkout_create_path,params: {id: product.id},remote: true, method: :post %>
+  </p>
+  <p>
+    <strong>Sales Count:</strong>
+    <%= product.sales_count %>
   </p>
 </div>
